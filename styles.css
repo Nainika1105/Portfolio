@@ -37,6 +37,17 @@ nav {
   width: 100%;
   z-index: 1000;
 }
+.hamburg {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.cancel {
+  font-size: 24px;
+  float: right;
+  margin-right: 1rem;
+  cursor: pointer;
+}
 
 
 .nav-container{
