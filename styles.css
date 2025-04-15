@@ -16,6 +16,7 @@ body{
     overflow-x: hidden;
     background: linear-gradient(to right, rgb(255,255,255), rgb(254,215,173));
 }
+
 section {
     padding: 80px 0;
   }
@@ -28,6 +29,15 @@ nav {
     z-index: 1000;
     background-color: transparent; /* <-- THIS IS KEY */
 }
+.dropdown {
+  transform: translateY(-500px);
+  transition: transform 0.5s ease;
+  position: absolute;
+  background: white;
+  width: 100%;
+  z-index: 1000;
+}
+
 
 .nav-container{
     width: 100%;
