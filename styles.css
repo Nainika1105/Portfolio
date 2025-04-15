@@ -508,7 +508,7 @@ nav {
     border: 7px solid transparent;
     border-bottom-width: 0px;
     border-right-width: 0px;
-    border-top-color: balck;
+    border-top-color: black;
     top: -10px;
     right: 0;
     animation: showText 0.5s 1.5s linear forwards;
@@ -701,3 +701,21 @@ nav {
         transform: translateY(0);
     }
 }
+@media (max-width: 768px) {
+  .nav-container .links {
+    display: none;
+  }
+  .hamburg {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  .main-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .main-container .image, .main-container .content {
+    width: 90%;
+  }
+}
+
