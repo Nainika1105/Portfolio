@@ -169,8 +169,10 @@ nav {
     transition: max-height 0.35s ease;
 }
 
+/* Headroom: six links measure 327px, so this is not a tight fit that
+   would silently clip if another link is added. */
 .dropdown.open {
-    max-height: 340px;
+    max-height: 460px;
 }
 
 .dropdown a {
@@ -288,6 +290,38 @@ nav {
 
 .card li::marker {
     color: var(--brand);
+}
+
+/* "View project" button on the project cards. Until a real href is set
+   the anchor carries no href, so it is inert and unfocusable rather than
+   a link that jumps to the top of the page. */
+.card-link {
+    align-self: flex-start;
+    margin-top: 6px;
+    padding: 9px 24px;
+    border: 2px solid var(--brand);
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--brand);
+    text-decoration: none;
+    transition: background-color 0.2s linear, color 0.2s linear;
+}
+
+.card-link:hover {
+    background-color: var(--brand);
+    color: #fff;
+}
+
+.card-link[aria-disabled="true"] {
+    border-color: var(--brand-line);
+    color: var(--ink-soft);
+    cursor: default;
+}
+
+.card-link[aria-disabled="true"]:hover {
+    background-color: transparent;
+    color: var(--ink-soft);
 }
 
 /* dot-separated lists stand in for chips and buttons */
