@@ -261,9 +261,9 @@ nav {
 }
 
 .card > i {
-    font-size: 2.6rem;
+    font-size: 1.9rem;
     color: var(--ink);
-    margin-bottom: 14px;
+    margin-bottom: 10px;
 }
 
 .card h3 {
@@ -292,36 +292,31 @@ nav {
     color: var(--brand);
 }
 
-/* "View project" button on the project cards. Until a real href is set
-   the anchor carries no href, so it is inert and unfocusable rather than
-   a link that jumps to the top of the page. */
+/* "View project" button on the project cards: solid brand fill so it
+   reads as the card's call to action. Until a real href is set the
+   anchor carries no href, so it is inert rather than a link that jumps
+   to the top of the page. */
 .card-link {
     align-self: flex-start;
-    margin-top: 6px;
-    padding: 9px 24px;
+    margin-top: 10px;
+    padding: 11px 28px;
     border: 2px solid var(--brand);
     border-radius: 999px;
-    font-size: 0.88rem;
+    background-color: var(--brand);
+    font-size: 0.9rem;
     font-weight: 600;
-    color: var(--brand);
+    color: #fff;
     text-decoration: none;
-    transition: background-color 0.2s linear, color 0.2s linear;
+    box-shadow: 0 8px 20px rgba(109, 67, 0, 0.3);
+    transition: background-color 0.2s linear, color 0.2s linear,
+                box-shadow 0.2s linear, transform 0.2s linear;
 }
 
 .card-link:hover {
-    background-color: var(--brand);
-    color: #fff;
-}
-
-.card-link[aria-disabled="true"] {
-    border-color: var(--brand-line);
-    color: var(--ink-soft);
-    cursor: default;
-}
-
-.card-link[aria-disabled="true"]:hover {
     background-color: transparent;
-    color: var(--ink-soft);
+    color: var(--brand);
+    box-shadow: none;
+    transform: translateY(-2px);
 }
 
 /* dot-separated lists stand in for chips and buttons */
@@ -329,7 +324,7 @@ nav {
     margin-top: auto;
     padding-top: 6px;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--brand);
     line-height: 1.9;
 }
