@@ -224,8 +224,8 @@ nav {
 /* ============ cards ============ */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 36px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
 }
 
 /* The shared surface. Two stacked gradients: the first paints the face
@@ -248,43 +248,43 @@ nav {
 .card {
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 44px 40px;
+    gap: 10px;
+    padding: 30px 28px;
     transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .card:hover {
-    transform: translateY(-14px);
+    transform: translateY(-10px);
     box-shadow:
         0 24px 56px rgba(109, 67, 0, 0.26),
         inset 0 1px 0 rgba(255, 255, 255, 0.95);
 }
 
 .card > i {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
     color: var(--ink);
-    margin-bottom: 10px;
+    margin-bottom: 4px;
 }
 
 .card h3 {
-    font-size: 1.75rem;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.25;
 }
 
 .card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--ink-soft);
 }
 
 .card ul {
-    padding-left: 20px;
+    padding-left: 18px;
     display: grid;
     gap: 10px;
 }
 
 .card li {
-    font-size: 1rem;
+    font-size: 0.9rem;
     color: var(--ink-soft);
 }
 
@@ -298,12 +298,12 @@ nav {
    to the top of the page. */
 .card-link {
     align-self: flex-start;
-    margin-top: 10px;
-    padding: 11px 28px;
+    margin-top: 8px;
+    padding: 9px 22px;
     border: 2px solid var(--brand);
     border-radius: 999px;
     background-color: var(--brand);
-    font-size: 0.9rem;
+    font-size: 0.82rem;
     font-weight: 600;
     color: #fff;
     text-decoration: none;
@@ -321,14 +321,10 @@ nav {
 
 /* The skills cards carry only a heading and two short lines, so they sit
    tighter and fit more to a row than the project cards. */
-/* Four across the top row. The remaining two sit centred beneath by
-   taking the middle two columns. This placement assumes six cards; add
-   or remove one and the nth-child rules below need revisiting. */
-.skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-}
-
+/* Skills has six cards, so the last row holds two. Centre them beneath
+   by taking the middle two columns. This assumes six cards; add or
+   remove one and these nth-child rules need revisiting. Sizing comes
+   from .card above, which every section now shares. */
 .skills-grid .card:nth-child(5) {
     grid-column: 2;
 }
@@ -337,29 +333,11 @@ nav {
     grid-column: 3;
 }
 
-.skills-grid .card {
-    gap: 10px;
-    padding: 30px 28px;
-}
-
-.skills-grid .card > i {
-    font-size: 1.5rem;
-    margin-bottom: 4px;
-}
-
-.skills-grid .card h3 {
-    font-size: 1.25rem;
-}
-
-.skills-grid .card li {
-    font-size: 0.9rem;
-}
-
 /* dot-separated lists stand in for chips and buttons */
 .dot-list {
     margin-top: auto;
     padding-top: 6px;
-    font-size: 0.95rem;
+    font-size: 0.82rem;
     font-weight: 700;
     color: var(--brand);
     line-height: 1.9;
@@ -687,9 +665,9 @@ footer {
 }
 
 /* Four fixed columns get cramped before the nav even collapses, so the
-   skills grid reflows earlier and the centring placement is released. */
+   card grids reflow earlier and the skills centring is released. */
 @media (max-width: 1120px) {
-    .skills-grid {
+    .card-grid {
         grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     }
 
@@ -776,13 +754,12 @@ footer {
         margin-bottom: 40px;
     }
 
-    .card,
-    .contact-form {
-        padding: 32px 26px;
+    .card {
+        padding: 26px 22px;
     }
 
-    .card h3 {
-        font-size: 1.5rem;
+    .contact-form {
+        padding: 32px 26px;
     }
 }
 
