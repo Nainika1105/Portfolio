@@ -319,6 +319,35 @@ nav {
     transform: translateY(-2px);
 }
 
+/* The skills cards carry only a heading and two short lines, so they sit
+   tighter and fit more to a row than the project cards. */
+/* Six cards, so three to a row divides evenly. A capped width keeps them
+   narrow rather than letting them stretch across the full measure. */
+.skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+.skills-grid .card {
+    gap: 10px;
+    padding: 30px 28px;
+}
+
+.skills-grid .card > i {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.skills-grid .card h3 {
+    font-size: 1.25rem;
+}
+
+.skills-grid .card li {
+    font-size: 0.9rem;
+}
+
 /* dot-separated lists stand in for chips and buttons */
 .dot-list {
     margin-top: auto;
@@ -681,6 +710,12 @@ footer {
     .hero-facts,
     .social-links {
         justify-content: center;
+    }
+
+    /* Three fixed columns get cramped here, so let them reflow. */
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        max-width: none;
     }
 
     .contact-layout {
