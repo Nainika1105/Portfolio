@@ -321,13 +321,20 @@ nav {
 
 /* The skills cards carry only a heading and two short lines, so they sit
    tighter and fit more to a row than the project cards. */
-/* Six cards, so three to a row divides evenly. A capped width keeps them
-   narrow rather than letting them stretch across the full measure. */
+/* Four across the top row. The remaining two sit centred beneath by
+   taking the middle two columns. This placement assumes six cards; add
+   or remove one and the nth-child rules below need revisiting. */
 .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 24px;
-    max-width: 900px;
-    margin-inline: auto;
+}
+
+.skills-grid .card:nth-child(5) {
+    grid-column: 2;
+}
+
+.skills-grid .card:nth-child(6) {
+    grid-column: 3;
 }
 
 .skills-grid .card {
@@ -679,6 +686,19 @@ footer {
     }
 }
 
+/* Four fixed columns get cramped before the nav even collapses, so the
+   skills grid reflows earlier and the centring placement is released. */
+@media (max-width: 1120px) {
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    }
+
+    .skills-grid .card:nth-child(5),
+    .skills-grid .card:nth-child(6) {
+        grid-column: auto;
+    }
+}
+
 @media (max-width: 880px) {
     .links {
         display: none;
@@ -712,11 +732,6 @@ footer {
         justify-content: center;
     }
 
-    /* Three fixed columns get cramped here, so let them reflow. */
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        max-width: none;
-    }
 
     .contact-layout {
         grid-template-columns: 1fr;
