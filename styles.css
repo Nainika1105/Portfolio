@@ -341,8 +341,21 @@ nav {
     overflow: hidden;
 }
 
+/* The front holds only the name, so the icon and heading run larger
+   here than on the skills and extracurricular cards. */
 .flip-front {
     justify-content: center;
+    gap: 16px;
+}
+
+.flip-front i {
+    font-size: 2.6rem;
+    margin-bottom: 0;
+}
+
+.flip-front h3 {
+    font-size: 1.55rem;
+    line-height: 1.2;
 }
 
 .flip-back {
@@ -565,7 +578,7 @@ nav {
     padding: 8px 0;
     /* caps and centres the pair so the composition sits mid-page
        rather than spanning the full measure */
-    max-width: 820px;
+    max-width: 900px;
     margin-inline: auto;
 }
 
@@ -608,7 +621,7 @@ nav {
 }
 
 .entry-b::before {
-    inset: -18px -20px -18px -26%;
+    inset: -18px -20px;
 }
 
 .work-eyebrow {
